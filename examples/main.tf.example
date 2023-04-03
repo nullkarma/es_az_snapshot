@@ -1,0 +1,10 @@
+module "snapshot" {
+  source = "../es_azure_backup"
+
+  name           = "testing"
+  container_name = "backup"
+  schedule       = "0 30 1 * * ?"
+  indices        = ["*"]
+  snapshot_name  = "all-indices"
+  azure_client   = "myaz"
+}
